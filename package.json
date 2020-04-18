@@ -10,16 +10,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:test-focus-highlighter.helloWorld"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "test-focus-highlighter.helloWorld",
-				"title": "Hello World"
-			}
-		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
