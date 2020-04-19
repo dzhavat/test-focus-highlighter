@@ -2,6 +2,7 @@
 	"name": "test-focus-highlighter",
 	"displayName": "test-focus-highlighter",
 	"description": "",
+	"publisher": "dzhavat",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.44.0"
@@ -10,10 +11,10 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onLanguage:javascript"
 	],
 	"main": "./out/extension.js",
-	"contributes": {
-	},
+	"contributes": {},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
