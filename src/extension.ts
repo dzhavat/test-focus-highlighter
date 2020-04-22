@@ -5,16 +5,16 @@ import { Node } from "typescript";
 const FDESCRIBE_FIT_QUERY = 'CallExpression > Identifier[name=/^f(describe|it)$/]';
 const ONLY_QUERY = 'PropertyAccessExpression > Identifier[name="only"]';
 
-let decorationType = vscode.window.createTextEditorDecorationType({
-	backgroundColor: '#ff37371a'
-});
+let textEditorDecoration: vscode.TextEditorDecorationType;
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: vscode.ExtensionContext): void {
 	const activeEditor = vscode.window.activeTextEditor;
 
 	if (!activeEditor || !isSpecFile(activeEditor.document)) {
 		return;
 	}
+
+	textEditorDecoration = createTextEditorDecoration(context);
 
 	decorate(activeEditor);
 	
@@ -29,34 +29,48 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposableChangeDocument);
 }
 
+function createTextEditorDecoration(context: vscode.ExtensionContext) {
+	return vscode.window.createTextEditorDecorationType({
+		overviewRulerLane: 4,
+		gutterIconPath: context.asAbsolutePath('/images/warning.svg'),
+		overviewRulerColor: new vscode.ThemeColor('editorWarning.foreground'),
+		gutterIconSize: '1rem',
+	});
+}
+
 function isSpecFile(document: vscode.TextDocument) {
-	return !document.isUntitled && document.fileName.endsWith('.spec.js');
+	return !document.isUntitled && (document.fileName.endsWith('.spec.js') || document.fileName.endsWith('.spec.ts'));
 }
 
 function decorate(activeEditor: vscode.TextEditor) {
 	const sourceCode = activeEditor.document.getText();
-	let decorationsArray: vscode.DecorationOptions[] = [];
+	let decorationOptions: vscode.DecorationOptions[] = [];
 
 	tsquery(sourceCode, FDESCRIBE_FIT_QUERY).map(result => {
-		const decoration = newDecorationOption(activeEditor, result.parent);
+		const decoration = createDecorationOption(activeEditor, result.parent.parent);
 
-		decorationsArray.push(decoration);
+		decorationOptions.push(decoration);
 	});
 
 	tsquery(sourceCode, ONLY_QUERY).map(result => {
-		const decoration = newDecorationOption(activeEditor, result.parent.parent);
+		const decoration = createDecorationOption(activeEditor, result.parent.parent.parent);
 
-		decorationsArray.push(decoration);
+		decorationOptions.push(decoration);
 	});
 
-	activeEditor.setDecorations(decorationType, decorationsArray);
+	activeEditor.setDecorations(textEditorDecoration, decorationOptions);
 }
 
-function newDecorationOption(activeEditor: vscode.TextEditor, node: Node) {
+function createDecorationOption(activeEditor: vscode.TextEditor, node: Node) {
 	const posStart = activeEditor.document.positionAt(node.getStart());
 	const posEnd = activeEditor.document.positionAt(node.getEnd());
 
-	return { range: new vscode.Range(posStart, posEnd) };
+	const decoration: vscode.DecorationOptions = {
+		range: new vscode.Range(posStart, posEnd),
+		hoverMessage: new vscode.MarkdownString('$(warning) Focused test. Be careful not to commit it!', true),
+	};
+
+	return decoration;
 }
 
 export function deactivate() {}
