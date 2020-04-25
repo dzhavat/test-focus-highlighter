@@ -8,18 +8,20 @@ const ONLY_QUERY = 'PropertyAccessExpression > Identifier[name="only"]';
 let textEditorDecoration: vscode.TextEditorDecorationType;
 
 export function activate(context: vscode.ExtensionContext): void {
-	const activeEditor = vscode.window.activeTextEditor;
+	let activeEditor = vscode.window.activeTextEditor;
 
 	textEditorDecoration = createTextEditorDecoration(context);
 
 	vscode.window.onDidChangeActiveTextEditor(editor => {
+		activeEditor = editor;
+
 		if (editor) {
 			decorate(editor);
 		}
 	}, null, context.subscriptions);
 
 	vscode.workspace.onDidChangeTextDocument(event => {
-		if (activeEditor && event.document === activeEditor.document) {
+		if (activeEditor && activeEditor.document === event.document) {
 			decorate(activeEditor);
 		}
 	}, null, context.subscriptions);
