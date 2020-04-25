@@ -10,23 +10,31 @@ let textEditorDecoration: vscode.TextEditorDecorationType;
 export function activate(context: vscode.ExtensionContext): void {
 	const activeEditor = vscode.window.activeTextEditor;
 
-	if (!activeEditor || !isSpecFile(activeEditor.document)) {
-		return;
-	}
-
 	textEditorDecoration = createTextEditorDecoration(context);
 
-	decorate(activeEditor);
+	const disposableVisibleTextEditors = vscode.window.onDidChangeVisibleTextEditors(event => {
+		let editor = vscode.window.activeTextEditor;
+
+		if (editor && isSpecFile(editor.document)) {
+			decorate(editor);
+		}
+	});
 	
 	const disposableChangeDocument = vscode.workspace.onDidChangeTextDocument(event => {
 		const openEditor = vscode.window.visibleTextEditors.filter(
 			editor => editor.document.uri === event.document.uri
 		)[0];
 
-		decorate(openEditor);
+		if (isSpecFile(openEditor.document)) {
+			decorate(openEditor);
+		}
 	});
-	
-	context.subscriptions.push(disposableChangeDocument);
+
+	if (activeEditor && isSpecFile(activeEditor.document)) {
+		decorate(activeEditor);
+	}
+
+	context.subscriptions.push(disposableVisibleTextEditors, disposableChangeDocument);
 }
 
 function createTextEditorDecoration(context: vscode.ExtensionContext) {
