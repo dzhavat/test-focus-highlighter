@@ -12,29 +12,21 @@ export function activate(context: vscode.ExtensionContext): void {
 
 	textEditorDecoration = createTextEditorDecoration(context);
 
-	const disposableVisibleTextEditors = vscode.window.onDidChangeVisibleTextEditors(event => {
-		let editor = vscode.window.activeTextEditor;
-
-		if (editor && isSpecFile(editor.document)) {
+	vscode.window.onDidChangeActiveTextEditor(editor => {
+		if (editor) {
 			decorate(editor);
 		}
-	});
-	
-	const disposableChangeDocument = vscode.workspace.onDidChangeTextDocument(event => {
-		const openEditor = vscode.window.visibleTextEditors.filter(
-			editor => editor.document.uri === event.document.uri
-		)[0];
+	}, null, context.subscriptions);
 
-		if (isSpecFile(openEditor.document)) {
-			decorate(openEditor);
+	vscode.workspace.onDidChangeTextDocument(event => {
+		if (activeEditor && event.document === activeEditor.document) {
+			decorate(activeEditor);
 		}
-	});
-
-	if (activeEditor && isSpecFile(activeEditor.document)) {
+	}, null, context.subscriptions);
+	
+	if (activeEditor) {
 		decorate(activeEditor);
 	}
-
-	context.subscriptions.push(disposableVisibleTextEditors, disposableChangeDocument);
 }
 
 function createTextEditorDecoration(context: vscode.ExtensionContext) {
@@ -46,13 +38,11 @@ function createTextEditorDecoration(context: vscode.ExtensionContext) {
 	});
 }
 
-function isSpecFile(document: vscode.TextDocument): boolean {
-	const fileNameEndsWith = /[-|.]spec\.(j|t)s$/;
-
-	return !document.isUntitled && (fileNameEndsWith.test(document.fileName));
-}
-
 function decorate(activeEditor: vscode.TextEditor) {
+	if (!isSpecFile(activeEditor.document)) {
+		return;
+	}
+
 	const sourceCode = activeEditor.document.getText();
 	let decorationOptions: vscode.DecorationOptions[] = [];
 
@@ -69,6 +59,12 @@ function decorate(activeEditor: vscode.TextEditor) {
 	});
 
 	activeEditor.setDecorations(textEditorDecoration, decorationOptions);
+}
+
+function isSpecFile(document: vscode.TextDocument): boolean {
+	const fileNameEndsWith = /[-|.]spec\.[j|t]s$/;
+
+	return !document.isUntitled && (fileNameEndsWith.test(document.fileName));
 }
 
 function createDecorationOption(activeEditor: vscode.TextEditor, node: Node) {
