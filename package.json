@@ -1,17 +1,31 @@
 {
 	"name": "test-focus-highlighter",
-	"displayName": "test-focus-highlighter",
-	"description": "",
+	"displayName": "Test Focus Highlighter",
+	"description": "An extension that highlights focused tests in a spec file.",
 	"publisher": "dzhavat",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.44.0"
+		"vscode": "^1.39.0"
 	},
 	"categories": [
-		"Other"
+		"Linters",
+		"Programming Languages"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dzhavat/test-focus-highlighter.git"
+	},
+	"license": "MIT",
+	"keywords": [
+		"mocha",
+		"jasmine",
+		"jest",
+		"testing",
+		"unit testing"
 	],
 	"activationEvents": [
-		"onLanguage:javascript"
+		"onLanguage:javascript",
+		"onLanguage:typescript"
 	],
 	"main": "./out/extension.js",
 	"contributes": {},
@@ -24,7 +38,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.44.0",
+		"@types/vscode": "^1.39.0",
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^7.0.2",
 		"@types/node": "^13.11.0",
