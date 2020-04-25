@@ -1,65 +1,30 @@
-# test-focus-highlighter README
+# Test Focus Highlighter
 
-This is the README for your extension "test-focus-highlighter". After writing up a brief description, we recommend including the following sections.
+An extension that highlights focused tests in a spec file.
+
+Why?
+
+Focused tests can be great during local development because they allow us to execute only a single spec or a spec suite. Jasmine has [`fdescribe`](https://jasmine.github.io/api/3.5/global.html#fdescribe) and [`fit`](https://jasmine.github.io/api/3.5/global.html#fit), Mocha has [`.only()`](https://mochajs.org/#exclusive-tests) and Jest [supports both](https://jestjs.io/docs/en/api#describeonlyname-fn). 
+
+However, this should come with a **big warning**! Commiting and pushing focused tests upstream means that **only a subset** of your tests will run. This **can mislead you** into thinking that your test suites are executing successfully when in reality it's only a small portion of them.
+
+There are many ways to guard against this problem. Some are manual like relying on self discipline and pull request reviews, while other take advantage of automatization and tooling like setting up git precommit hooks, lint rules, continuous integration pipeline checks, etc. 
+
+The purpose of this extension is to help you identify focused tests very early in the development process by making them visually stand out. The extension will not prevent you from commiting focused tests. It only aims to increase your chances of catching focused tests before committing them. 
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Works with JavaScript files whose name ends with `-spec.js` or `.spec.js`.
+- Works with TypeScript files whose name ends with `-spec.ts` or `.spec.ts`.
+- Highlights tests that use `fdescribe`, `fit` and `.only` syntax.
+- Shows a warning icon in the gutter for each line covered by a focused test.
+- Shows a warning message when a focused test is hovered.
+- Shows a color in the overview ruler that makes it easy to see any focus tests in a big spec file. The color used for this is `editorWarning.foreground` which is defined by the theme. Currently this option is not configurable.
 
-For example if there is an image subfolder under your extension project workspace:
+## Demo
 
-\!\[feature X\]\(images/feature-x.png\)
+![Demo](./images/demo.gif)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Credit
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
