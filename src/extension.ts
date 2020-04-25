@@ -38,8 +38,10 @@ function createTextEditorDecoration(context: vscode.ExtensionContext) {
 	});
 }
 
-function isSpecFile(document: vscode.TextDocument) {
-	return !document.isUntitled && (document.fileName.endsWith('.spec.js') || document.fileName.endsWith('.spec.ts'));
+function isSpecFile(document: vscode.TextDocument): boolean {
+	const fileNameEndsWith = /[-|.]spec\.(j|t)s$/;
+
+	return !document.isUntitled && (fileNameEndsWith.test(document.fileName));
 }
 
 function decorate(activeEditor: vscode.TextEditor) {
@@ -62,11 +64,11 @@ function decorate(activeEditor: vscode.TextEditor) {
 }
 
 function createDecorationOption(activeEditor: vscode.TextEditor, node: Node) {
-	const posStart = activeEditor.document.positionAt(node.getStart());
-	const posEnd = activeEditor.document.positionAt(node.getEnd());
+	const startPosition = activeEditor.document.positionAt(node.getStart());
+	const endPosition = activeEditor.document.positionAt(node.getEnd());
 
 	const decoration: vscode.DecorationOptions = {
-		range: new vscode.Range(posStart, posEnd),
+		range: new vscode.Range(startPosition, endPosition),
 		hoverMessage: new vscode.MarkdownString('$(warning) Focused test. Be careful not to commit it!', true),
 	};
 
