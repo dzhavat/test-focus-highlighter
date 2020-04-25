@@ -21,11 +21,11 @@ The purpose of this extension is to help you identify focused tests very early i
 - Shows a warning message when a focused test is hovered. (2)
 - Shows a color in the overview ruler that makes it easy to see any focus tests in a big spec file. The color used for this is `editorWarning.foreground` which is defined by the theme. Currently this option is not configurable. (3)
 
-![Features](./images/features.jpg)
+![Features](images/features.jpg)
 
 ## Demo
 
-![Demo](./images/demo.gif)
+![Demo](images/demo.gif)
 
 ## Credit
 

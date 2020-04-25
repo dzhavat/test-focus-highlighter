@@ -4,7 +4,7 @@
 	"description": "An extension that visually highlights focused tests in spec files.",
 	"publisher": "dzhavat",
 	"version": "0.0.1",
-	"icon": "./images/icon.jpg",
+	"icon": "images/icon.jpg",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
