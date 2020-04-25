@@ -1,6 +1,6 @@
 # Test Focus Highlighter
 
-An extension that highlights focused tests in a spec file.
+An extension that visually highlights focused tests in spec files.
 
 Why?
 

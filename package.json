@@ -1,7 +1,7 @@
 {
 	"name": "test-focus-highlighter",
 	"displayName": "Test Focus Highlighter",
-	"description": "An extension that highlights focused tests in a spec file.",
+	"description": "An extension that visually highlights focused tests in spec files.",
 	"publisher": "dzhavat",
 	"version": "0.0.1",
 	"engines": {
