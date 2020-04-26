@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { tsquery } from '@phenomnomnominal/tsquery';
-import { Node } from "typescript";
+import { Node } from 'typescript';
 
 const FDESCRIBE_FIT_QUERY = 'CallExpression > Identifier[name=/^f(describe|it)$/]';
 const ONLY_QUERY = 'PropertyAccessExpression > Identifier[name="only"]';
