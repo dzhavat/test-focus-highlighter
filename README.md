@@ -4,13 +4,13 @@ An extension that visually highlights focused tests in spec files.
 
 Why?
 
-Focused tests can be great during local development because they allow us to execute only a single spec or a spec suite. Jasmine has [`fdescribe`](https://jasmine.github.io/api/3.5/global.html#fdescribe) and [`fit`](https://jasmine.github.io/api/3.5/global.html#fit), Mocha has [`.only()`](https://mochajs.org/#exclusive-tests) and Jest [supports both](https://jestjs.io/docs/en/api#describeonlyname-fn). 
+Focused tests can be great during local development because they allow us to execute only a single spec or a spec suite. Jasmine has [`fdescribe`](https://jasmine.github.io/api/3.5/global.html#fdescribe) and [`fit`](https://jasmine.github.io/api/3.5/global.html#fit), Mocha has [`.only()`](https://mochajs.org/#exclusive-tests) and Jest [supports](https://jestjs.io/docs/en/api#describeonlyname-fn) both. 
 
 However, this should come with a **big warning**! Commiting and pushing focused tests upstream means that **only a subset** of your tests will run. This **can mislead you** into thinking that your test suites are executing successfully when in reality it's only a small portion of them.
 
-There are many ways to guard against this problem. Some are manual like relying on self discipline and pull request reviews, while other take advantage of automatization and tooling like setting up git precommit hooks, lint rules, continuous integration pipeline checks, etc. 
+There are many ways to guard against this problem. Some are manual like relying on self discipline and pull request reviews, while other take advantage of automatization and tooling like setting up git precommit hooks, lint rules, continuous integration pipeline checks, etc.
 
-The purpose of this extension is to help you identify focused tests very early in the development process by making them visually stand out. The extension will not prevent you from commiting focused tests. It only aims to increase your chances of catching focused tests before committing them. 
+The purpose of this extension is to help you identify focused tests very early in the development process by making them visually stand out. The extension will not prevent you from commiting focused tests. It only aims to increase your chances of catching focused tests before committing them.
 
 ## Features
 
