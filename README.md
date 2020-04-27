@@ -1,4 +1,4 @@
-# Test Focus Highlighter
+# Test Focus Highlighter ([link](https://marketplace.visualstudio.com/items?itemName=dzhavat.test-focus-highlighter))
 
 An extension that visually highlights focused tests in spec files.
 
