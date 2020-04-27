@@ -1,10 +1,10 @@
 # Changelog
 
-## 1.0.0 (2020-04-25)
+Based on [Keep a Changelog](http://keepachangelog.com/).
 
-### Initial release
+## [1.0.0] - 2020-04-27
 
-#### Added
+### Added
 
 - Works with JavaScript files whose name ends with `-spec.js` or `.spec.js`.
 - Works with TypeScript files whose name ends with `-spec.ts` or `.spec.ts`.
