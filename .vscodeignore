@@ -7,3 +7,6 @@ src/**
 **/.eslintrc.json
 **/*.map
 **/*.ts
+images/demo.gif
+images/features.jpg
+images/buy-me-a-cup-of-tea.png
