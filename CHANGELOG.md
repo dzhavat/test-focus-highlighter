@@ -1,8 +1,17 @@
 # Changelog
 
-Based on [Keep a Changelog](http://keepachangelog.com/).
+## [1.0.1](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.0...1.0.1) - 2021-02-20
 
-## [1.0.0] - 2020-04-27
+### Fixed
+
+- Fix links to demo gifs
+
+### Changed
+
+- Set the minimum supported VS Code version to 1.47.0
+- Update dependencies
+
+## [1.0.0](https://github.com/dzhavat/test-focus-highlighter/releases/tag/1.0.0) - 2020-04-27
 
 ### Added
 
