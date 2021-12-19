@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.2](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.2...1.0.3) - 2021-12-19
+## [1.0.3](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.2...1.0.3) - 2021-12-19
 
 ### Changed
 
