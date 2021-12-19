@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/dzhavat/test-focus-highlighter.git"
   },
+  "vsce": {
+    "githubBranch": "main"
+  },
   "license": "MIT",
   "keywords": [
     "mocha",
