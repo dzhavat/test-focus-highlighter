@@ -16,6 +16,11 @@
     "type": "git",
     "url": "https://github.com/dzhavat/test-focus-highlighter.git"
   },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
   "vsce": {
     "githubBranch": "main"
   },
