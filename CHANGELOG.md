@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.3...1.1.0) - 2021-12-19
+
+### Added
+
+- Support for Workspace Trust
+
 ## [1.0.3](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.2...1.0.3) - 2021-12-19
 
 ### Changed
