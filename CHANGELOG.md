@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.0](https://github.com/dzhavat/test-focus-highlighter/compare/1.1.3...1.2.0) - 2022-09-16
+
+### Added
+
+- Support `*.cy.js` and `*.cy.ts` tests used in Cypress
+
+### Changed
+
+- Set the minimum supported VS Code version to 1.68.0
+- Update dependencies
+
 ## [1.1.0](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.3...1.1.0) - 2021-12-19
 
 ### Added
