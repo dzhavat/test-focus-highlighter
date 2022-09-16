@@ -4,7 +4,7 @@ An extension that visually highlights focused tests in spec files.
 
 Why?
 
-Focused tests can be great during local development because they allow us to execute only a single spec or a spec suite. Jasmine has [`fdescribe`](https://jasmine.github.io/api/3.5/global.html#fdescribe) and [`fit`](https://jasmine.github.io/api/3.5/global.html#fit), Mocha has [`.only()`](https://mochajs.org/#exclusive-tests) and Jest [supports](https://jestjs.io/docs/en/api#describeonlyname-fn) both. 
+Focused tests can be great during local development because they allow us to execute only a single spec or a spec suite. Jasmine has [`fdescribe`](https://jasmine.github.io/api/4.4/global.html#fdescribe) and [`fit`](https://jasmine.github.io/api/4.4/global.html#fit), Mocha has [`.only()`](https://mochajs.org/#exclusive-tests) and Jest [supports](https://jestjs.io/docs/api#describeonlyname-fn) [both](https://jestjs.io/docs/api#testonlyname-fn-timeout).
 
 However, this should come with a **big warning**! Commiting and pushing focused tests upstream means that **only a subset** of your tests will run. This **can mislead you** into thinking that your test suites are executing successfully when in reality it's only a small portion of them.
 
@@ -16,6 +16,7 @@ The purpose of this extension is to help you identify focused tests very early i
 
 - Works with JavaScript files whose name ends with `-spec.js` or `.spec.js`.
 - Works with TypeScript files whose name ends with `-spec.ts` or `.spec.ts`.
+- Works with Cypress files whose name ends with `-cy.js` or `.cy.ts`.
 - Highlights tests that use `fdescribe`, `fit` and `.only` syntax.
 - Shows a warning icon in the gutter for each line covered by a focused test. (1)
 - Shows a warning message when a focused test is hovered. (2)
