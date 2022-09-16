@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.2.0](https://github.com/dzhavat/test-focus-highlighter/compare/1.1.3...1.2.0) - 2022-09-16
+## 1.2.1 - 2022-09-16
+
+### Changed
+
+- Update README file
+
+## 1.2.0 - 2022-09-16
 
 ### Added
 
@@ -11,27 +17,27 @@
 - Set the minimum supported VS Code version to 1.68.0
 - Update dependencies
 
-## [1.1.0](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.3...1.1.0) - 2021-12-19
+## 1.1.0 - 2021-12-19
 
 ### Added
 
 - Support for Workspace Trust
 
-## [1.0.3](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.2...1.0.3) - 2021-12-19
+## 1.0.3 - 2021-12-19
 
 ### Changed
 
 - Set the minimum supported VS Code version to 1.58.0
 - Update dependencies
 
-## [1.0.2](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.1...1.0.2) - 2021-06-17
+## 1.0.2 - 2021-06-17
 
 ### Changed
 
 - Set the minimum supported VS Code version to 1.52.0
 - Update dependencies
 
-## [1.0.1](https://github.com/dzhavat/test-focus-highlighter/compare/1.0.0...1.0.1) - 2021-02-20
+## 1.0.1 - 2021-02-20
 
 ### Fixed
 
@@ -42,7 +48,7 @@
 - Set the minimum supported VS Code version to 1.47.0
 - Update dependencies
 
-## [1.0.0](https://github.com/dzhavat/test-focus-highlighter/releases/tag/1.0.0) - 2020-04-27
+## 1.0.0 - 20-04-27
 
 ### Added
 
