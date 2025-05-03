@@ -55,7 +55,7 @@
 		"typescript-eslint": "8.31.1"
 	},
 	"dependencies": {
-		"@phenomnomnominal/tsquery": "6.1.2",
+		"@phenomnomnominal/tsquery": "6.1.3",
 		"typescript": "5.8.3"
 	}
 }
