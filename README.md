@@ -14,7 +14,8 @@ The purpose of this extension is to help you identify focused tests very early i
 
 ## Features
 
-- Works with JavaScript files whose name ends with `-spec.js` or `.spec.js`.
+- Works with JavaScript files whose name ends with `-spec.js` or `.spec.js`
+- Works with JavaScript module files whose name ends with `-spec.mjs` or `.spec.mjs`
 - Works with TypeScript files whose name ends with `-spec.ts` or `.spec.ts`.
 - Works with Cypress files whose name ends with `-cy.js` or `.cy.ts`.
 - Highlights tests that use `fdescribe`, `fit` and `.only` syntax.

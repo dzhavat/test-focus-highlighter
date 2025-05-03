@@ -79,7 +79,7 @@ function decorate(activeEditor: vscode.TextEditor) {
 }
 
 function isSpecFile(document: vscode.TextDocument): boolean {
-	const fileNameEndsWith = /[-.](spec|cy)\.(js|ts)$/;
+	const fileNameEndsWith = /[-.](spec|cy)\.(js|ts|mjs)$/;
 
 	return !document.isUntitled && fileNameEndsWith.test(document.fileName);
 }
