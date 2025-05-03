@@ -2,7 +2,7 @@
 src/**
 .gitignore
 **/tsconfig.json
-**/.eslintrc.json
+**/eslint.config.mjs
 **/*.map
 **/*.ts
 images/demo.gif
