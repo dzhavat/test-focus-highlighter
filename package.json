@@ -47,17 +47,12 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/glob": "8.0.0",
-		"@types/mocha": "^9.1.1",
 		"@types/node": "^16.11.59",
 		"@types/vscode": "1.68.0",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
 		"@typescript-eslint/parser": "^5.37.0",
 		"eslint": "^8.23.1",
-		"glob": "^8.0.3",
-		"mocha": "10.0.0",
-		"prettier": "2.7.1",
-		"vscode-test": "^1.6.1"
+		"prettier": "2.7.1"
 	},
 	"dependencies": {
 		"@phenomnomnominal/tsquery": "^5.0.0",
