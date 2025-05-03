@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.3.0 - 2025-05-04
+
+### Added
+
+- Support for `*.mjs` spec file extension (as in `*.spec.mjs` and `-spec.mjs`) (thanks @eyssette)
+
+### Changed
+
+- Set the minimum supported VS Code version to 1.95.0
+- Update dependencies
+- Various minor changes needed for maintenance
+
 ## 1.2.1 - 2022-09-16
 
 ### Changed
