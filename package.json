@@ -45,15 +45,15 @@
 		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
-		"@types/node": "^16.11.59",
+		"@types/node": "22.12.0",
 		"@types/vscode": "1.68.0",
-		"@typescript-eslint/eslint-plugin": "^5.37.0",
-		"@typescript-eslint/parser": "^5.37.0",
+		"@typescript-eslint/eslint-plugin": "8.31.1",
+		"@typescript-eslint/parser": "8.31.1",
 		"eslint": "^8.23.1",
-		"prettier": "2.7.1"
+		"prettier": "3.5.3"
 	},
 	"dependencies": {
-		"@phenomnomnominal/tsquery": "^5.0.0",
-		"typescript": "^4.8.3"
+		"@phenomnomnominal/tsquery": "6.1.2",
+		"typescript": "5.8.3"
 	}
 }
