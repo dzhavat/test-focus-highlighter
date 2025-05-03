@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext): void {
 			}
 		},
 		null,
-		context.subscriptions
+		context.subscriptions,
 	);
 
 	vscode.workspace.onDidChangeTextDocument(
@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext): void {
 			}
 		},
 		null,
-		context.subscriptions
+		context.subscriptions,
 	);
 
 	if (activeEditor) {
@@ -55,12 +55,12 @@ function decorate(activeEditor: vscode.TextEditor) {
 	}
 
 	const sourceCode = activeEditor.document.getText();
-	let decorationOptions: vscode.DecorationOptions[] = [];
+	const decorationOptions: vscode.DecorationOptions[] = [];
 
 	tsquery(sourceCode, FDESCRIBE_FIT_QUERY).map((result) => {
 		const decoration = createDecorationOption(
 			activeEditor,
-			result.parent.parent
+			result.parent.parent,
 		);
 
 		decorationOptions.push(decoration);
@@ -69,7 +69,7 @@ function decorate(activeEditor: vscode.TextEditor) {
 	tsquery(sourceCode, ONLY_QUERY).map((result) => {
 		const decoration = createDecorationOption(
 			activeEditor,
-			result.parent.parent.parent
+			result.parent.parent.parent,
 		);
 
 		decorationOptions.push(decoration);
@@ -92,7 +92,7 @@ function createDecorationOption(activeEditor: vscode.TextEditor, node: Node) {
 		range: new vscode.Range(startPosition, endPosition),
 		hoverMessage: new vscode.MarkdownString(
 			"$(warning) Focused test. Be careful not to commit it!",
-			true
+			true,
 		),
 	};
 

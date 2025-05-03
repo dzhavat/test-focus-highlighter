@@ -41,16 +41,18 @@
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
-		"lint": "eslint src --ext ts",
+		"lint": "eslint",
 		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
+		"@eslint/js": "9.26.0",
+		"@stylistic/eslint-plugin": "4.2.0",
 		"@types/node": "22.12.0",
 		"@types/vscode": "1.68.0",
-		"@typescript-eslint/eslint-plugin": "8.31.1",
-		"@typescript-eslint/parser": "8.31.1",
-		"eslint": "^8.23.1",
-		"prettier": "3.5.3"
+		"eslint": "9.26.0",
+		"prettier": "3.5.3",
+		"typescript": "5.8.3",
+		"typescript-eslint": "8.31.1"
 	},
 	"dependencies": {
 		"@phenomnomnominal/tsquery": "6.1.2",
