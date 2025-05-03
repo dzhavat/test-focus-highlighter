@@ -1,66 +1,66 @@
 {
-  "name": "test-focus-highlighter",
-  "displayName": "Test Focus Highlighter",
-  "description": "An extension that visually highlights focused tests in spec files.",
-  "publisher": "dzhavat",
-  "version": "1.2.1",
-  "icon": "images/icon.jpg",
-  "engines": {
-    "vscode": "^1.68.0"
-  },
-  "categories": [
-    "Linters",
-    "Programming Languages"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dzhavat/test-focus-highlighter.git"
-  },
-  "capabilities": {
-    "untrustedWorkspaces": {
-      "supported": true
-    }
-  },
-  "vsce": {
-    "githubBranch": "main"
-  },
-  "license": "MIT",
-  "keywords": [
-    "mocha",
-    "jasmine",
-    "jest",
-    "testing",
-    "unit testing"
-  ],
-  "activationEvents": [
-    "onLanguage:javascript",
-    "onLanguage:typescript"
-  ],
-  "main": "./out/extension.js",
-  "contributes": {},
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "lint": "eslint src --ext ts",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "8.0.0",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^16.11.59",
-    "@types/vscode": "1.68.0",
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "eslint": "^8.23.1",
-    "glob": "^8.0.3",
-    "mocha": "10.0.0",
-    "prettier": "2.7.1",
-    "vscode-test": "^1.6.1"
-  },
-  "dependencies": {
-    "@phenomnomnominal/tsquery": "^5.0.0",
-    "typescript": "^4.8.3"
-  }
+	"name": "test-focus-highlighter",
+	"displayName": "Test Focus Highlighter",
+	"description": "An extension that visually highlights focused tests in spec files.",
+	"publisher": "dzhavat",
+	"version": "1.2.1",
+	"icon": "images/icon.jpg",
+	"engines": {
+		"vscode": "^1.68.0"
+	},
+	"categories": [
+		"Linters",
+		"Programming Languages"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dzhavat/test-focus-highlighter.git"
+	},
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"vsce": {
+		"githubBranch": "main"
+	},
+	"license": "MIT",
+	"keywords": [
+		"mocha",
+		"jasmine",
+		"jest",
+		"testing",
+		"unit testing"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:typescript"
+	],
+	"main": "./out/extension.js",
+	"contributes": {},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "8.0.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "^16.11.59",
+		"@types/vscode": "1.68.0",
+		"@typescript-eslint/eslint-plugin": "^5.37.0",
+		"@typescript-eslint/parser": "^5.37.0",
+		"eslint": "^8.23.1",
+		"glob": "^8.0.3",
+		"mocha": "10.0.0",
+		"prettier": "2.7.1",
+		"vscode-test": "^1.6.1"
+	},
+	"dependencies": {
+		"@phenomnomnominal/tsquery": "^5.0.0",
+		"typescript": "^4.8.3"
+	}
 }
